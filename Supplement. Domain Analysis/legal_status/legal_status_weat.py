@@ -110,12 +110,11 @@ def weat(group_one, group_two, attribute_one, attribute_two):
 if __name__ == "__main__": 
 
   # Set the parent directory as current path 
-  current_path = os.path.abspath('..')
-
+  current_path = os.path.abspath('../..')
+  
   # Import word stimuli pertaining to the specific domain
-  os.chdir(os.path.join(current_path, 'Supplement. Domain Analysis/Domain Word Stimuli'))
-  superior = pd.read_csv("intellectual_mental_superior.csv").words.tolist()
-  inferior = pd.read_csv("intellectual_mental_inferior.csv").words.tolist()
+  american = pd.read_csv("legal_status_american.csv").words.tolist()
+  foreign = pd.read_csv("legal_status_foreign.csv").words.tolist()
 
   # Import words to represent African, Asian, Hispanic, and White Americans
   os.chdir(os.path.join(current_path, 'Group Word Stimuli/Names70'))
@@ -132,43 +131,43 @@ if __name__ == "__main__":
   random.seed(1048596)
   num_perm = 1000
 
-  # Six WEATs pertaining to Superiority 
-  wb_superior_label = ['White v. African Americans', 'Superiority']
-  print('Whites v. Blacks | Superior v. Inferior')
-  wb_superior = perm(word_vectors, whites, blacks, superior, inferior, num_perm)
-  row1 = np.concatenate((wb_superior_label, wb_superior), axis = None)
+  # Six WEATs pertaining to Americanness
 
-  wa_superior_label = ['White v. Asian Americans', 'Superiority']
-  print('Whites v. Asian | Superior v. Inferior')
-  wa_superior = perm(word_vectors, whites, asians, superior, inferior, num_perm)
-  row2 = np.concatenate((wa_superior_label, wa_superior), axis = None)
+  wb_american_label = ['White v. African Americans', 'Americanness']
+  print('Whites v. Blacks | American v. Foreign')
+  wb_american = perm(word_vectors, whites, blacks, american, foreign, num_perm)
+  row1 = np.concatenate((wb_american_label, wb_american), axis = None)
 
-  wh_superior_label = ['White v. Hispanic Americans', 'Superiority']
-  print('Whites v. Hispanics | Superior v. Inferior')
-  wh_superior = perm(word_vectors, whites, hispanics, superior, inferior, num_perm)
-  row3 = np.concatenate((wh_superior_label, wh_superior), axis = None)
+  wa_american_label = ['White v. Asian Americans', 'Americanness']
+  print('Whites v. Asians | American v. Foreign')
+  wa_american = perm(word_vectors, whites, asians, american, foreign, num_perm)
+  row2 = np.concatenate((wa_american_label, wa_american), axis = None)
 
-  ab_superior_label = ['Asian v. African Americans', 'Superiority']
-  print('Asians v. Blacks | Superior v. Inferior')
-  ab_superior = perm(word_vectors, asians, blacks, superior, inferior, num_perm)
-  row4 = np.concatenate((ab_superior_label, ab_superior), axis = None)
+  wh_american_label = ['White v. Hispanic Americans', 'Americanness']
+  print('Whites v. Hispanics | American v. Foreign')
+  wh_american = perm(word_vectors, whites, hispanics, american, foreign, num_perm)
+  row3 = np.concatenate((wh_american_label, wh_american), axis = None)
 
-  ah_superior_label = ['Asian v. Hispanic Americans', 'Superiority']
-  print('Asians v. Hispanics | Superior v. Inferior')
-  ah_superior = perm(word_vectors, asians, hispanics, superior, inferior, num_perm)
-  row5 = np.concatenate((ah_superior_label, ah_superior), axis = None)
+  ba_american_label = ['African v. Asian Americans', 'Americanness']
+  print('Blacks v. Asians | American v. Foreign')
+  ba_american = perm(word_vectors, blacks, asians, american, foreign, num_perm)
+  row4 = np.concatenate((ba_american_label, ba_american), axis = None)
 
-  bh_superior_label = ['African v. Hispanic Americans', 'Superiority']
-  print('Blacks v. Hispanics | Superior v. Inferior')
-  bh_superior = perm(word_vectors, blacks, hispanics, superior, inferior, num_perm)
-  row6 = np.concatenate((bh_superior_label, bh_superior), axis = None)
+  bh_american_label = ['African v. Hispanic Americans', 'Americanness']
+  print('Blacks v. Hispanics | American v. Foreign')
+  bh_american = perm(word_vectors, blacks, hispanics, american, foreign, num_perm)
+  row5 = np.concatenate((bh_american_label, bh_american), axis = None)
 
+  ah_american_label = ['Asian v. Hispanic Americans', 'Americanness']
+  print('Asians v. Hispanic | American v. Foreign')
+  ah_american = perm(word_vectors, asians, hispanics, american, foreign, num_perm)
+  row6 = np.concatenate((ah_american_label, ah_american), axis = None)
 
   # Store the group and dimension labels, WEAT D-score, and 95% CIs as a pandas dataframe
   weat_df = pd.DataFrame(np.array([row1, row2, row3, row4, row5, row6]), columns = ['groups', 'dimensions', 'effect', 'lower', 'upper'])
 
   # Store the results inside the results folder
-  os.chdir(os.path.join(current_path, 'Supplement. Domain Analysis/intellectual_mental_results'))
-  weat_df.to_csv('intellectual_mental_weat_results.csv', index = False)
+  os.chdir(os.path.join(current_path, 'Supplement. Domain Analysis/legal_status'))
+  weat_df.to_csv('legal_status_weat_results.csv', index = False)
 
 

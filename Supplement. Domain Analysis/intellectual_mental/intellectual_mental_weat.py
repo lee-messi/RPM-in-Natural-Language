@@ -110,12 +110,11 @@ def weat(group_one, group_two, attribute_one, attribute_two):
 if __name__ == "__main__": 
 
   # Set the parent directory as current path 
-  current_path = os.path.abspath('..')
+  current_path = os.path.abspath('../..')
 
   # Import word stimuli pertaining to the specific domain
-  os.chdir(os.path.join(current_path, 'Supplement. Domain Analysis/Domain Word Stimuli'))
-  superior = pd.read_csv("social_cultural_superior.csv").words.tolist()
-  inferior = pd.read_csv("social_cultural_inferior.csv").words.tolist()
+  superior = pd.read_csv("intellectual_mental_superior.csv").words.tolist()
+  inferior = pd.read_csv("intellectual_mental_inferior.csv").words.tolist()
 
   # Import words to represent African, Asian, Hispanic, and White Americans
   os.chdir(os.path.join(current_path, 'Group Word Stimuli/Names70'))
@@ -168,7 +167,7 @@ if __name__ == "__main__":
   weat_df = pd.DataFrame(np.array([row1, row2, row3, row4, row5, row6]), columns = ['groups', 'dimensions', 'effect', 'lower', 'upper'])
 
   # Store the results inside the results folder
-  os.chdir(os.path.join(current_path, 'Supplement. Domain Analysis/social_cultural_results'))
-  weat_df.to_csv('social_cultural_weat_results.csv', index = False)
+  os.chdir(os.path.join(current_path, 'Supplement. Domain Analysis/intellectual_mental'))
+  weat_df.to_csv('intellectual_mental_weat_results.csv', index = False)
 
 
