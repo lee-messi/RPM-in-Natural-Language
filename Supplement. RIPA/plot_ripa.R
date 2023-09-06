@@ -1,0 +1,78 @@
+
+## Lee, Montgomery, Lai
+# America's Racial Framework of Superiority and Americanness Embedded in Natural Language
+
+## Script date: 28 Aug 2023
+
+# Install and load packages ----------------------------------------------------
+
+if(!require("tidyverse")){install.packages("tidyverse", dependencies = TRUE); require("tidyverse")}
+if(!require("ggplot2")){install.packages("ggplot2", dependencies = TRUE); require("ggplot2")}
+
+# Import the Dataset -----------------------------------------------------------
+
+# Import RIPA results
+setwd("Results")
+
+ripa.table = read.csv('RIPA_70.csv')
+
+# Filter RIPA results in the superiority dimension
+superior.table <- ripa.table %>% 
+  filter(dimensions == "Superiority") %>%
+  mutate(groups = factor(groups, levels = c("African v. Hispanic Americans",
+                                            "Asian v. Hispanic Americans", 
+                                            "Asian v. African Americans", 
+                                            "White v. Hispanic Americans",
+                                            "White v. Asian Americans",
+                                            "White v. African Americans")))
+
+# Filter RIPA results in the Americanness dimension
+american.table <- ripa.table %>% 
+  filter(dimensions == "Americanness") %>%
+  mutate(groups = factor(groups, levels = c("Asian v. Hispanic Americans",
+                                            "African v. Hispanic Americans", 
+                                            "African v. Asian Americans", 
+                                            "White v. Hispanic Americans",
+                                            "White v. Asian Americans",
+                                            "White v. African Americans")))
+
+# Superiority Forest Plot ------------------------------------------------------
+
+setwd("../Plots")
+
+ggplot(superior.table, aes(x = effect, y = groups, xmin = lower, xmax = upper)) +
+  geom_vline(xintercept = 0, linetype = "longdash") + 
+  scale_x_continuous(limits = c(-0.2, 0.6),
+                     breaks = c(-0.2, 0.0, 0.2, 0.4, 0.6),
+                     labels = c('-0.2', '0.0', '0.2', '0.4', '0.6')) + 
+  geom_point(size = 3) +
+  geom_errorbarh(height = .5) + 
+  theme_bw() + 
+  theme(plot.title = element_text(size = rel(1.8), hjust = 0.5),
+        axis.title.x = element_blank(),
+        axis.text.x = element_text(size = rel(1.8)),
+        axis.title.y = element_blank(),
+        axis.text.y = element_text(size = rel(1.8), margin = margin(r = 5)))
+
+ggsave(file = "superior_ripa_70.pdf", width = 10, height = 3, dpi = "retina")
+ggsave(file = "superior_ripa_70.png", width = 10, height = 3, dpi = "retina")
+
+# Americanness Forest Plot -----------------------------------------------------
+
+ggplot(american.table, aes(x = effect, y = groups, xmin = lower, xmax = upper)) +
+  geom_vline(xintercept = 0, linetype = "longdash") + 
+  scale_x_continuous(limits = c(-0.2, 0.6),
+                     breaks = c(-0.2, 0.0, 0.2, 0.4, 0.6),
+                     labels = c('-0.2', '0.0', '0.2', '0.4', '0.6')) + 
+  geom_point(size = 3) +
+  geom_errorbarh(height = .2) + 
+  theme_bw() + 
+  theme(plot.title = element_text(size = rel(1.8), hjust = 0.5),
+        axis.title.x = element_blank(),
+        axis.text.x = element_text(size = rel(1.8)),
+        axis.title.y = element_blank(),
+        axis.text.y = element_text(size = rel(1.8), margin = margin(r = 5)))
+
+ggsave(file = "american_ripa_70.pdf", width = 10, height = 3, dpi = "retina")
+ggsave(file = "american_ripa_70.png", width = 10, height = 3, dpi = "retina")
+
