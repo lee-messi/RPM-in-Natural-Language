@@ -44,15 +44,14 @@ if __name__ == "__main__":
   # Set the parent directory as current path 
   current_path = os.path.abspath('..')
 
-  # Import words to represent African, Asian, Hispanic, and White Americans
+  # Import words to represent African, Asian, and Hispanic Americans
   os.chdir(os.path.join(current_path, 'Group Word Stimuli/Names70'))
   blacks = pd.read_csv("black_names.csv").name.tolist()
   asians = pd.read_csv("asian_names.csv").name.tolist()
   hispanics = pd.read_csv("hispanic_names.csv").name.tolist()
-  whites = pd.read_csv("white_names.csv").name.tolist()
 
-  # Create a list of all names
-  names = blacks + asians + hispanics + whites
+  # Create a list of the names of the three minority groups
+  names = blacks + asians + hispanics 
 
   # Import words to represent superiority, inferiority, Americanness, foreignness attributes
   os.chdir(os.path.join(current_path, 'Attribute Word Stimuli/Word Stimuli'))
