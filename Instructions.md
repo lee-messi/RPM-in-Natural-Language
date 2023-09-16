@@ -270,10 +270,10 @@ This GitHub repository does not include the following files:
 
 ### **Exploratory Analyses (Exploratory Analyses Folder)**
 > Correlational Analysis
-* Confirm that *black\_names.csv*, *asian\_names.csv*, *hispanic\_names.csv*, and *white\_names.csv* are inside the “Names70" subfolder of the "Group Word Stimuli” folder, that *superior.csv*, *inferior.csv*, *american.csv*, and *foreign.csv* are inside the “Word Stimuli” subfolder of the “Attribute Word Stimuli" folder, and that *coca.model* is inside the “Embedding Model" folder. 
+* Confirm that *black\_names.csv*, *asian\_names.csv*, and *hispanic\_names.csv* are inside the “Names70" subfolder of the "Group Word Stimuli” folder, that *superior.csv*, *inferior.csv*, *american.csv*, and *foreign.csv* are inside the “Word Stimuli” subfolder of the “Attribute Word Stimuli" folder, and that *coca.model* is inside the “Embedding Model" folder. 
 * Execute “count.py” inside the "Exploratory Analyses” folder. 
    - Run “python3 correlation.py” in Terminal or the Command Line. 
-   - This code calculates the correlation between the superiority and Americanness scores of all 200 group words. 
+   - This code calculates the correlation between the superiority and Americanness scores African, Asian, and Hispanic American group words. 
 
 > Count the frequency of word stimuli in COCA
 * Confirm that *black\_names.csv*, *asian\_names.csv*, *hispanic\_names.csv*, and *white\_names.csv* are inside the “Names70" subfolder of the "Group Word Stimuli” folder, that *superior.csv*, *inferior.csv*, *american.csv*, and *foreign.csv* are inside the “Word Stimuli” subfolder of the “Attribute Word Stimuli" folder, and that *preprocessed\_coca.pkl* is inside the “Corpus" folder. 
