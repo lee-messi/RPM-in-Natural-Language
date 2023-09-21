@@ -19,22 +19,22 @@ ripa.table = read.csv('RIPA_70.csv')
 # Filter RIPA results in the superiority dimension
 superior.table <- ripa.table %>% 
   filter(dimensions == "Superiority") %>%
-  mutate(groups = factor(groups, levels = c("African v. Hispanic Americans",
-                                            "Asian v. Hispanic Americans", 
-                                            "Asian v. African Americans", 
-                                            "White v. Hispanic Americans",
-                                            "White v. Asian Americans",
-                                            "White v. African Americans")))
+  mutate(groups = factor(groups, levels = c("Black v. Hispanic people",
+                                            "Asian v. Hispanic people", 
+                                            "Asian v. Black people", 
+                                            "White v. Hispanic people",
+                                            "White v. Asian people",
+                                            "White v. Black people")))
 
 # Filter RIPA results in the Americanness dimension
 american.table <- ripa.table %>% 
   filter(dimensions == "Americanness") %>%
-  mutate(groups = factor(groups, levels = c("Asian v. Hispanic Americans",
-                                            "African v. Hispanic Americans", 
-                                            "African v. Asian Americans", 
-                                            "White v. Hispanic Americans",
-                                            "White v. Asian Americans",
-                                            "White v. African Americans")))
+  mutate(groups = factor(groups, levels = c("Asian v. Hispanic people",
+                                            "Black v. Hispanic people", 
+                                            "Black v. Asian people", 
+                                            "White v. Hispanic people",
+                                            "White v. Asian people",
+                                            "White v. Black people")))
 
 # Superiority Forest Plot ------------------------------------------------------
 
