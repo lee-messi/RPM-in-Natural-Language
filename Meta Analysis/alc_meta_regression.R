@@ -79,47 +79,47 @@ superior <- rbind(acad, blog, fic, mag, news, spok, tvm, web) %>%
 
 # Single out the data frame of effect sizes corresponding to single group comparisons
 wb_superior <- superior %>% 
-  filter(groups == "White v. African Americans")
+  filter(groups == "White v. Black people")
 wa_superior <- superior %>% 
-  filter(groups == "White v. Asian Americans")
+  filter(groups == "White v. Asian people")
 wh_superior <- superior %>% 
-  filter(groups == "White v. Hispanic Americans")
+  filter(groups == "White v. Hispanic people")
 ab_superior <- superior %>% 
-  filter(groups == "Asian v. African Americans")
+  filter(groups == "Asian v. Black people")
 ah_superior <- superior %>% 
-  filter(groups == "Asian v. Hispanic Americans")
+  filter(groups == "Asian v. Hispanic people")
 bh_superior <- superior %>% 
-  filter(groups == "African v. Hispanic Americans")
+  filter(groups == "Black v. Hispanic people")
 
 # Meta-Regression (Superiority) ------------------------------------------------
 
 separator()
-print('Superiority: White v. African Americans')
+print('Superiority: White v. Black people')
 separator()
 for(t in category_list){compare_category(wb_superior, t)}
 separator()
 
-print('Superiority: White v. Asian Americans')
+print('Superiority: White v. Asian people')
 separator()
 for(t in category_list){compare_category(wa_superior, t)}
 separator()
 
-print('Superiority: White v. Hispanic Americans')
+print('Superiority: White v. Hispanic people')
 separator()
 for(t in category_list){compare_category(wh_superior, t)}
 separator()
 
-print('Superiority: Asian v. African Americans')
+print('Superiority: Asian v. Black people')
 separator()
 for(t in category_list){compare_category(ab_superior, t)}
 separator()
 
-print('Superiority: Asian v. Hispanic Americans')
+print('Superiority: Asian v. Hispanic people')
 separator()
 for(t in category_list){compare_category(ah_superior, t)}
 separator()
 
-print('Superiority: African v. Hispanic Americans')
+print('Superiority: Black v. Hispanic people')
 separator()
 for(t in category_list){compare_category(bh_superior, t)}
 separator()
@@ -135,46 +135,46 @@ american <- rbind(acad, blog, fic, mag, news, spok, tvm, web) %>%
 
 # Single out the data frame of effect sizes corresponding to single group comparisons
 wb_american <- american %>% 
-  filter(groups == "White v. African Americans")
+  filter(groups == "White v. Black people")
 wa_american <- american %>% 
-  filter(groups == "White v. Asian Americans")
+  filter(groups == "White v. Asian people")
 wh_american <- american %>% 
-  filter(groups == "White v. Hispanic Americans")
+  filter(groups == "White v. Hispanic people")
 ba_american <- american %>% 
-  filter(groups == "African v. Asian Americans")
+  filter(groups == "Black v. Asian people")
 bh_american <- american %>% 
-  filter(groups == "African v. Hispanic Americans")
+  filter(groups == "Black v. Hispanic people")
 ah_american <- american %>% 
-  filter(groups == "Asian v. Hispanic Americans")
+  filter(groups == "Asian v. Hispanic people")
 
 # Meta-Regression (Americanness) -----------------------------------------------
 
-print('Americanness: White v. African Americans')
+print('Americanness: White v. Black people')
 separator()
 for(t in category_list){compare_category(wb_american, t)}
 separator()
 
-print('Americanness: White v. Asian Americans')
+print('Americanness: White v. Asian people')
 separator()
 for(t in category_list){compare_category(wa_american, t)}
 separator()
 
-print('Americanness: White v. Hispanic Americans')
+print('Americanness: White v. Hispanic people')
 separator()
 for(t in category_list){compare_category(wh_american, t)}
 separator()
 
-print('Americanness: African v. Asian Americans')
+print('Americanness: Black v. Asian people')
 separator()
 for(t in category_list){compare_category(ba_american, t)}
 separator()
 
-print('Americanness: African v. Hispanic Americans')
+print('Americanness: Black v. Hispanic people')
 separator()
 for(t in category_list){compare_category(bh_american, t)}
 separator()
 
-print('Americanness: Asian v. Hispanic Americans')
+print('Americanness: Asian v. Hispanic people')
 separator()
 for(t in category_list){compare_category(ah_american, t)}
 separator()

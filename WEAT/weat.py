@@ -113,7 +113,7 @@ if __name__ == "__main__":
   # Set the parent directory as current path 
   current_path = os.path.abspath('..')
 
-  # Import words to represent African, Asian, Hispanic, and White Americans
+  # Import words to represent Black, Asian, Hispanic, and White people
   # Change below line of code to test different threshold values to compile names
   # os.chdir(os.path.join(current_path, 'Group Word Stimuli/Names70'))
   # os.chdir(os.path.join(current_path, 'Group Word Stimuli/Names60'))
@@ -140,64 +140,64 @@ if __name__ == "__main__":
   num_perm = 1000
 
   # Six WEATs pertaining to Superiority 
-  wb_superior_label = ['White v. African Americans', 'Superiority']
+  wb_superior_label = ['White v. Black people', 'Superiority']
   print('Whites v. Blacks | Superior v. Inferior')
   wb_superior = perm(word_vectors, whites, blacks, superior, inferior, num_perm)
   row1 = np.concatenate((wb_superior_label, wb_superior), axis = None)
 
-  wa_superior_label = ['White v. Asian Americans', 'Superiority']
+  wa_superior_label = ['White v. Asian people', 'Superiority']
   print('Whites v. Asian | Superior v. Inferior')
   wa_superior = perm(word_vectors, whites, asians, superior, inferior, num_perm)
   row2 = np.concatenate((wa_superior_label, wa_superior), axis = None)
 
-  wh_superior_label = ['White v. Hispanic Americans', 'Superiority']
+  wh_superior_label = ['White v. Hispanic people', 'Superiority']
   print('Whites v. Hispanics | Superior v. Inferior')
   wh_superior = perm(word_vectors, whites, hispanics, superior, inferior, num_perm)
   row3 = np.concatenate((wh_superior_label, wh_superior), axis = None)
 
-  ab_superior_label = ['Asian v. African Americans', 'Superiority']
+  ab_superior_label = ['Asian v. Black people', 'Superiority']
   print('Asians v. Blacks | Superior v. Inferior')
   ab_superior = perm(word_vectors, asians, blacks, superior, inferior, num_perm)
   row4 = np.concatenate((ab_superior_label, ab_superior), axis = None)
 
-  ah_superior_label = ['Asian v. Hispanic Americans', 'Superiority']
+  ah_superior_label = ['Asian v. Hispanic people', 'Superiority']
   print('Asians v. Hispanics | Superior v. Inferior')
   ah_superior = perm(word_vectors, asians, hispanics, superior, inferior, num_perm)
   row5 = np.concatenate((ah_superior_label, ah_superior), axis = None)
 
-  bh_superior_label = ['African v. Hispanic Americans', 'Superiority']
+  bh_superior_label = ['Black v. Hispanic people', 'Superiority']
   print('Blacks v. Hispanics | Superior v. Inferior')
   bh_superior = perm(word_vectors, blacks, hispanics, superior, inferior, num_perm)
   row6 = np.concatenate((bh_superior_label, bh_superior), axis = None)
 
   # Six WEATs pertaining to Americanness
 
-  wb_american_label = ['White v. African Americans', 'Americanness']
+  wb_american_label = ['White v. Black people', 'Americanness']
   print('Whites v. Blacks | American v. Foreign')
   wb_american = perm(word_vectors, whites, blacks, american, foreign, num_perm)
   row7 = np.concatenate((wb_american_label, wb_american), axis = None)
 
-  wa_american_label = ['White v. Asian Americans', 'Americanness']
+  wa_american_label = ['White v. Asian people', 'Americanness']
   print('Whites v. Asians | American v. Foreign')
   wa_american = perm(word_vectors, whites, asians, american, foreign, num_perm)
   row8 = np.concatenate((wa_american_label, wa_american), axis = None)
 
-  wh_american_label = ['White v. Hispanic Americans', 'Americanness']
+  wh_american_label = ['White v. Hispanic people', 'Americanness']
   print('Whites v. Hispanics | American v. Foreign')
   wh_american = perm(word_vectors, whites, hispanics, american, foreign, num_perm)
   row9 = np.concatenate((wh_american_label, wh_american), axis = None)
 
-  ba_american_label = ['African v. Asian Americans', 'Americanness']
+  ba_american_label = ['Black v. Asian people', 'Americanness']
   print('Blacks v. Asians | American v. Foreign')
   ba_american = perm(word_vectors, blacks, asians, american, foreign, num_perm)
   row10 = np.concatenate((ba_american_label, ba_american), axis = None)
 
-  bh_american_label = ['African v. Hispanic Americans', 'Americanness']
+  bh_american_label = ['Black v. Hispanic people', 'Americanness']
   print('Blacks v. Hispanics | American v. Foreign')
   bh_american = perm(word_vectors, blacks, hispanics, american, foreign, num_perm)
   row11 = np.concatenate((bh_american_label, bh_american), axis = None)
 
-  ah_american_label = ['Asian v. Hispanic Americans', 'Americanness']
+  ah_american_label = ['Asian v. Hispanic people', 'Americanness']
   print('Asians v. Hispanic | American v. Foreign')
   ah_american = perm(word_vectors, asians, hispanics, american, foreign, num_perm)
   row12 = np.concatenate((ah_american_label, ah_american), axis = None)

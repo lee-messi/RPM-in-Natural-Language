@@ -79,7 +79,7 @@ if __name__ == "__main__":
   # Set the parent directory as current path 
   current_path = os.path.abspath('..')
 
-  # Import words to represent African, Asian, Hispanic, and White Americans
+  # Import words to represent African, Asian, Hispanic, and White people
   os.chdir(os.path.join(current_path, 'Group Word Stimuli/Names70'))
   blacks = pd.read_csv("black_names.csv").name.tolist()
   asians = pd.read_csv("asian_names.csv").name.tolist()
@@ -102,43 +102,43 @@ if __name__ == "__main__":
   np.random.seed(1048597)
 
   # Four SC-WEATs pertaining to Superiority
-  black_superior_label = ['African Americans', 'Superiority']
+  black_superior_label = ['Black people', 'Superiority']
   print('Blacks | Superior v. Inferior')
   black_superior = boot(word_vectors, blacks, superior, inferior, boot_num)
   row1 = np.concatenate((black_superior_label, black_superior), axis = None)
 
-  asian_superior_label = ['Asian Americans', 'Superiority']
+  asian_superior_label = ['Asian people', 'Superiority']
   print('Asians | Superior v. Inferior')
   asian_superior = boot(word_vectors, asians, superior, inferior, boot_num)
   row2 = np.concatenate((asian_superior_label, asian_superior), axis = None)
 
-  hispanic_superior_label = ['Hispanic Americans', 'Superiority']  
+  hispanic_superior_label = ['Hispanic people', 'Superiority']  
   print('Hispanics | Superior v. Inferior')
   hispanic_superior = boot(word_vectors, hispanics, superior, inferior, boot_num)
   row3 = np.concatenate((hispanic_superior_label, hispanic_superior), axis = None)
 
-  white_superior_label = ['White Americans', 'Superiority']  
+  white_superior_label = ['White people', 'Superiority']  
   print('Whites | Superior v. Inferior')
   white_superior = boot(word_vectors, whites, superior, inferior, boot_num)
   row4 = np.concatenate((white_superior_label, white_superior), axis = None)
 
   # Four SC-WEATs pertaining to Americanness
-  black_american_label = ['African Americans', 'Americanness'] 
+  black_american_label = ['Black people', 'Americanness'] 
   print('Blacks | American v. Foreign')
   black_american = boot(word_vectors, blacks, american, foreign, boot_num)
   row5 = np.concatenate((black_american_label, black_american), axis = None)
 
-  asian_american_label = ['Asian Americans', 'Americanness'] 
+  asian_american_label = ['Asian people', 'Americanness'] 
   print('Asians | American v. Foreign')
   asian_american = boot(word_vectors, asians, american, foreign, boot_num)
   row6 = np.concatenate((asian_american_label, asian_american), axis = None)
  
-  hispanic_american_label = ['Hispanic Americans', 'Americanness'] 
+  hispanic_american_label = ['Hispanic people', 'Americanness'] 
   print('Hispanics | American v. Foreign')
   hispanic_american = boot(word_vectors, hispanics, american, foreign, boot_num)
   row7 = np.concatenate((hispanic_american_label, hispanic_american), axis = None)
   
-  white_american_label = ['White Americans', 'Americanness'] 
+  white_american_label = ['White people', 'Americanness'] 
   print('Whites | American v. Foreign')
   white_american = boot(word_vectors, whites, american, foreign, boot_num)
   row8 = np.concatenate((white_american_label, white_american), axis = None)

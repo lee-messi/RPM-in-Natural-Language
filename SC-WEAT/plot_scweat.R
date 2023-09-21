@@ -2,7 +2,7 @@
 ## Anonymous
 # America's Racial Framework of Superiority and Americanness Embedded in Natural Language
 
-## Script date: 15 March 2023
+## Script date: 20 Sep 2023
 
 # Install and load packages ----------------------------------------------------
 
@@ -33,7 +33,11 @@ scweat_american <- scweat %>%
   rename(american_upper = upper)
 
 # Bring the two data frames into a single one again
-scweat <- merge(scweat_superior, scweat_american, by = "groups")
+scweat <- merge(scweat_superior, scweat_american, by = "groups") %>%
+  mutate(groups = factor(groups, levels = c("Black people", 
+                                            "Asian people", 
+                                            "Hispanic people", 
+                                            "White people")))
 
 # Plot -------------------------------------------------------------------------
 
@@ -70,8 +74,8 @@ ggplot(scweat, aes(x = american_effect, y = superior_effect, color = groups)) +
         axis.text = element_text(size = 16),
         axis.title = element_text(size = 16), 
         legend.text = element_text(size = 14)) +
-  scale_color_jama(labels = c("African Americans", "Asian Americans", 
-                              "Hispanic Americans", "White Americans"))
+  scale_color_jama(labels = c("Black people", "Asian people", 
+                              "Hispanic people", "White people"))
 
 ggsave("scweat2d_plot.pdf", width = 10, height = 7.5, dpi = "retina")
 ggsave("scweat2d_plot.png", width = 10, height = 7.5, dpi = "retina")

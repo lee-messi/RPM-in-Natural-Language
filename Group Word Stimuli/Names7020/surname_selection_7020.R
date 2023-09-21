@@ -2,7 +2,7 @@
 ## Anonymous
 # America's Racial Framework of Superiority and Americanness Embedded in Natural Language
 
-## Script date: 28 Aug 2023
+## Script date: 20 Sep 2023
 
 # Install and load packages-----------------------------------------------------
 
@@ -38,7 +38,7 @@ names <- read.csv('surnames_2010.csv') %>%
 
 # Compile List by Racial/Ethnic Group ------------------------------------------
 
-# e.g. African Americans: Use the following steps to compile list of names
+# e.g. Black people: Use the following steps to compile list of names
 # 1) Filter names with pctblack value higher than 0.7
 # 2) Filter out names with pctwhite value higher than 0.2
 # 3) Filter out names with pctapi value higher than 0.2

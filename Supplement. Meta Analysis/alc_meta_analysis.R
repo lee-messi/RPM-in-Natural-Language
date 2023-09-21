@@ -2,7 +2,7 @@
 ## Anonymous
 # America's Racial Framework of Superiority and Americanness Embedded in Natural Language
 
-## Script date: 6 Sept 2023
+## Script date: 21 Sept 2023
 
 # Install and load packages ----------------------------------------------------
 

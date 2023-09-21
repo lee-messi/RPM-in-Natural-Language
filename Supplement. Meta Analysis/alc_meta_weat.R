@@ -2,7 +2,7 @@
 ## Anonymous
 # America's Racial Framework of Superiority and Americanness Embedded in Natural Language
 
-## Script date: 28 Aug 2023
+## Script date: 21 Sep 2023
 
 # Install and load packages ----------------------------------------------------
 
@@ -113,43 +113,43 @@ weat_results <- function(text.category, alc.embeddings, verbose = TRUE){
   
   if(verbose){message("Performing WEATs in the Superiority dimension...[1/3]")}
   # Perform WEATs for group comparisons in the superiority dimension
-  wb_superior <- weat_perm('White v. African Americans', 'Superiority',
+  wb_superior <- weat_perm('White v. Black people', 'Superiority',
                            alc.embeddings[[4]], alc.embeddings[[1]], 
                            alc.embeddings[[5]], alc.embeddings[[6]])
-  wa_superior <- weat_perm('White v. Asian Americans', 'Superiority',
+  wa_superior <- weat_perm('White v. Asian people', 'Superiority',
                            alc.embeddings[[4]], alc.embeddings[[2]], 
                            alc.embeddings[[5]], alc.embeddings[[6]])
-  wh_superior <- weat_perm('White v. Hispanic Americans', 'Superiority', 
+  wh_superior <- weat_perm('White v. Hispanic people', 'Superiority', 
                            alc.embeddings[[4]], alc.embeddings[[3]], 
                            alc.embeddings[[5]], alc.embeddings[[6]])
-  ab_superior <- weat_perm('Asian v. African Americans', 'Superiority', 
+  ab_superior <- weat_perm('Asian v. Black people', 'Superiority', 
                            alc.embeddings[[2]], alc.embeddings[[1]], 
                            alc.embeddings[[5]], alc.embeddings[[6]])
-  ah_superior <- weat_perm('Asian v. Hispanic Americans', 'Superiority', 
+  ah_superior <- weat_perm('Asian v. Hispanic people', 'Superiority', 
                            alc.embeddings[[2]], alc.embeddings[[3]], 
                            alc.embeddings[[5]], alc.embeddings[[6]])
-  bh_superior <- weat_perm('African v. Hispanic Americans', 'Superiority', 
+  bh_superior <- weat_perm('Black v. Hispanic people', 'Superiority', 
                            alc.embeddings[[1]], alc.embeddings[[3]], 
                            alc.embeddings[[5]], alc.embeddings[[6]])
   
   if(verbose){message("Performing WEATs in the Americanness dimension...[2/3]")}
   # Perform WEATs for group comparisons in the Americanness dimension
-  wb_american <- weat_perm('White v. African Americans', 'Americanness',
+  wb_american <- weat_perm('White v. Black people', 'Americanness',
                            alc.embeddings[[4]], alc.embeddings[[1]], 
                            alc.embeddings[[7]], alc.embeddings[[8]])
-  wa_american <- weat_perm('White v. Asian Americans', 'Americanness', 
+  wa_american <- weat_perm('White v. Asian people', 'Americanness', 
                            alc.embeddings[[4]], alc.embeddings[[2]], 
                            alc.embeddings[[7]], alc.embeddings[[8]])
-  wh_american <- weat_perm('White v. Hispanic Americans', 'Americanness', 
+  wh_american <- weat_perm('White v. Hispanic people', 'Americanness', 
                            alc.embeddings[[4]], alc.embeddings[[3]], 
                            alc.embeddings[[7]], alc.embeddings[[8]])
-  ba_american <- weat_perm('African v. Asian Americans', 'Americanness', 
+  ba_american <- weat_perm('Black v. Asian people', 'Americanness', 
                            alc.embeddings[[1]], alc.embeddings[[2]], 
                            alc.embeddings[[7]], alc.embeddings[[8]])
-  bh_american <- weat_perm('African v. Hispanic Americans', 'Americanness', 
+  bh_american <- weat_perm('Black v. Hispanic people', 'Americanness', 
                            alc.embeddings[[1]], alc.embeddings[[3]], 
                            alc.embeddings[[7]], alc.embeddings[[8]])
-  ah_american <- weat_perm('Asian v. Hispanic Americans', 'Americanness', 
+  ah_american <- weat_perm('Asian v. Hispanic people', 'Americanness', 
                            alc.embeddings[[2]], alc.embeddings[[3]], 
                            alc.embeddings[[7]], alc.embeddings[[8]])
   
