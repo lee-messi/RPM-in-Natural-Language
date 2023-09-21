@@ -2,7 +2,7 @@
 ## Anonymous
 # America's Racial Framework of Superiority and Americanness Embedded in Natural Language
 
-## Script date: 3 Sept 2023
+## Script date: 20 Sep 2023
 
 # Install and load packages ----------------------------------------------------
 
@@ -40,12 +40,12 @@ superior <- all_tests %>%
   filter(dimension == "Superiority") %>%
   rename(yi = effect) %>%
   mutate(sei = (yi - lower)/1.96) %>%
-  arrange(match(groups, c("White v. African Americans", 
-                          "White v. Asian Americans",
-                          "White v. Hispanic Americans",
-                          "Asian v. African Americans",
-                          "Asian v. Hispanic Americans",
-                          "African v. Hispanic Americans")))
+  arrange(match(groups, c("White v. Black people", 
+                          "White v. Asian people",
+                          "White v. Hispanic people",
+                          "Asian v. Black people",
+                          "Asian v. Hispanic people",
+                          "Black v. Hispanic people")))
 
 
 # Filter test results pertaining to the Americanness dimension 
@@ -54,12 +54,12 @@ american <- all_tests %>%
   filter(dimension == "Americanness") %>%
   rename(yi = effect) %>%
   mutate(sei = (yi - lower)/1.96) %>%
-  arrange(match(groups, c("White v. African Americans", 
-                          "White v. Asian Americans",
-                          "White v. Hispanic Americans",
-                          "African v. Asian Americans",
-                          "African v. Hispanic Americans",
-                          "Asian v. Hispanic Americans")))
+  arrange(match(groups, c("White v. Black people", 
+                          "White v. Asian people",
+                          "White v. Hispanic people",
+                          "Black v. Asian people",
+                          "Black v. Hispanic people",
+                          "Asian v. Hispanic people")))
 
 
 # Forest Plot of Superiority WEAT Ds -------------------------------------------
@@ -74,12 +74,12 @@ plot(1, type="n", xlab="", ylab="",
 box()
 mtext(expression(paste("WEAT ", italic(D))), side = 2, line = 5, cex = 1.6)
 axis(1, at = c(1.2, 2.4, 3.6, 4.8, 6.0, 7.2), 
-     labels = c("White v. African\nAmericans", 
-                "White v. Asian\nAmericans",
-                "White v. Hispanic\nAmericans",
-                "Asian v. African\nAmericans",
-                "Asian v. Hispanic\nAmericans",
-                "African v. Hispanic\nAmericans"),
+     labels = c("White v. Black\npeople", 
+                "White v. Asian\npeople",
+                "White v. Hispanic\npeople",
+                "Asian v. Black\npeople",
+                "Asian v. Hispanic\npeople",
+                "Black v. Hispanic\npeople"),
      cex.axis = 1.6, padj = 1)
 
 axis(2, at = seq(-1.5, 4.0, by = 0.5), 
@@ -181,12 +181,12 @@ plot(1, type="n", xlab="", ylab="",
 box()
 mtext(expression(paste("WEAT ", italic(D))), side = 2, line = 5, cex = 1.6)
 axis(1, at = c(1.2, 2.4, 3.6, 4.8, 6.0, 7.2), 
-     labels = c("White v. African\nAmericans", 
-                "White v. Asian\nAmericans",
-                "White v. Hispanic\nAmericans",
-                "African v. Asian\nAmericans",
-                "African v. Hispanic\nAmericans",
-                "Asian v. Hispanic\nAmericans"),
+     labels = c("White v. Black\npeople", 
+                "White v. Asian\npeople",
+                "White v. Hispanic\npeople",
+                "Black v. Asian\npeople",
+                "Black v. Hispanic\npeople",
+                "Asian v. Hispanic\npeople"),
      cex.axis = 1.6, padj = 1)
 
 axis(2, at = seq(-1.5, 4.0, by = 0.5), 
