@@ -45,8 +45,8 @@ ggplot(superior.table, aes(x = effect, y = groups, xmin = lower, xmax = upper)) 
   scale_x_continuous(limits = c(-0.2, 0.6),
                      breaks = c(-0.2, 0.0, 0.2, 0.4, 0.6),
                      labels = c('-0.2', '0.0', '0.2', '0.4', '0.6')) + 
-  geom_point(size = 3) +
-  geom_errorbarh(height = .5) + 
+  geom_point(size = 2) +
+  geom_errorbarh(height = .2) + 
   theme_bw() + 
   theme(plot.title = element_text(size = rel(1.8), hjust = 0.5),
         axis.title.x = element_blank(),
@@ -55,7 +55,6 @@ ggplot(superior.table, aes(x = effect, y = groups, xmin = lower, xmax = upper)) 
         axis.text.y = element_text(size = rel(1.8), margin = margin(r = 5)))
 
 ggsave(file = "superior_ripa_70.pdf", width = 10, height = 3, dpi = "retina")
-ggsave(file = "superior_ripa_70.png", width = 10, height = 3, dpi = "retina")
 
 # Americanness Forest Plot -----------------------------------------------------
 
@@ -64,7 +63,7 @@ ggplot(american.table, aes(x = effect, y = groups, xmin = lower, xmax = upper)) 
   scale_x_continuous(limits = c(-0.2, 0.6),
                      breaks = c(-0.2, 0.0, 0.2, 0.4, 0.6),
                      labels = c('-0.2', '0.0', '0.2', '0.4', '0.6')) + 
-  geom_point(size = 3) +
+  geom_point(size = 2) +
   geom_errorbarh(height = .2) + 
   theme_bw() + 
   theme(plot.title = element_text(size = rel(1.8), hjust = 0.5),
@@ -74,5 +73,4 @@ ggplot(american.table, aes(x = effect, y = groups, xmin = lower, xmax = upper)) 
         axis.text.y = element_text(size = rel(1.8), margin = margin(r = 5)))
 
 ggsave(file = "american_ripa_70.pdf", width = 10, height = 3, dpi = "retina")
-ggsave(file = "american_ripa_70.png", width = 10, height = 3, dpi = "retina")
 
