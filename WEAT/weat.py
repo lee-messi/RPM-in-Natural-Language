@@ -49,7 +49,6 @@ def perm(vectors, group_one, group_two, attribute_one, attribute_two, nperm):
   a = np.array([actual, lower_ci, upper_ci])
   columns = ['effect', 'lower', 'upper']
   df = pd.DataFrame(np.reshape(a, (1,len(a))),columns=columns)
-  print(a)
 
   return(df)
   

@@ -2,7 +2,7 @@
 ## Anonymous
 # America's Racial Framework of Superiority and Americanness Embedded in Natural Language
 
-## Script date: 20 Sep 2023
+## Script date: 4 Oct 2023
 
 # Install and load packages ----------------------------------------------------
 
@@ -15,16 +15,16 @@ if(!require("ggplot2")){install.packages("ggplot2", dependencies = TRUE); requir
 setwd("Results")
 
 # Change below line of code to test different threshold values to compile names
-weat_table = read.csv('weat_results_70.csv')
+# weat_table = read.csv('weat_results_70.csv')
 # weat_table = read.csv('weat_results_60.csv')
-# weat_table = read.csv('weat_results_7020.csv')
+weat_table = read.csv('weat_results_7020.csv')
 
 # Filter WEAT results in the superiority dimension
 superior_table <- weat_table %>% 
   filter(dimensions == "Superiority") %>%
   mutate(groups = factor(groups, levels = c("Black v. Hispanic people",
-                                            "Asian v. Hispanic people", 
-                                            "Asian v. Black people", 
+                                            "Asian v. Hispanic people",
+                                            "Asian v. Black people",
                                             "White v. Hispanic people",
                                             "White v. Asian people",
                                             "White v. Black people")))
@@ -33,8 +33,8 @@ superior_table <- weat_table %>%
 american_table <- weat_table %>% 
   filter(dimensions == "Americanness") %>%
   mutate(groups = factor(groups, levels = c("Asian v. Hispanic people",
-                                            "Black v. Hispanic people", 
-                                            "Black v. Asian people", 
+                                            "Black v. Hispanic people",
+                                            "Black v. Asian people",
                                             "White v. Hispanic people",
                                             "White v. Asian people",
                                             "White v. Black people")))
@@ -49,7 +49,7 @@ ggplot(superior_table, aes(x = effect, y = groups, xmin = lower, xmax = upper)) 
   scale_x_continuous(limits = c(-1, 2.5),
                      breaks = c(-1.0, -0.5, 0, 0.5, 1.0, 1.5, 2.0, 2.5),
                      labels = c('-1.0', '-0.5', '0', '0.5', '1.0', '1.5', '2.0', '2.5')) + 
-  geom_point() +
+  geom_point(size = 2) +
   geom_errorbarh(height = .2) + 
   theme_bw() + 
   theme(plot.title = element_text(size = 16, hjust = 0.5),
@@ -60,12 +60,9 @@ ggplot(superior_table, aes(x = effect, y = groups, xmin = lower, xmax = upper)) 
 
 # Change below line of code to plot results using group word stimuli 
 # compiled using different threshold values
-ggsave(file = "superior_weat_70.pdf", width = 10, height = 3, dpi = "retina")
-ggsave(file = "superior_weat_70.png", width = 10, height = 3, dpi = "retina")
+# ggsave(file = "superior_weat_70.pdf", width = 10, height = 3, dpi = "retina")
 # ggsave(file = "superior_weat_60.pdf", width = 10, height = 3, dpi = "retina")
-# ggsave(file = "superior_weat_60.png", width = 10, height = 3, dpi = "retina")
-# ggsave(file = "superior_weat_7020.pdf", width = 10, height = 3, dpi = "retina")
-# ggsave(file = "superior_weat_7020.png", width = 10, height = 3, dpi = "retina")
+ggsave(file = "superior_weat_7020.pdf", width = 10, height = 3, dpi = "retina")
 
 # Americanness Forest Plot -----------------------------------------------------
 
@@ -74,7 +71,7 @@ ggplot(american_table, aes(x = effect, y = groups, xmin = lower, xmax = upper)) 
   scale_x_continuous(limits = c(-1, 2.5),
                      breaks = c(-1.0, -0.5, 0, 0.5, 1.0, 1.5, 2.0, 2.5),
                      labels = c('-1.0', '-0.5', '0', '0.5', '1.0', '1.5', '2.0', '2.5')) + 
-  geom_point() +
+  geom_point(size = 2) +
   geom_errorbarh(height = .2) + 
   theme_bw() + 
   theme(plot.title = element_text(size = 16, hjust = 0.5),
@@ -85,11 +82,8 @@ ggplot(american_table, aes(x = effect, y = groups, xmin = lower, xmax = upper)) 
 
 # Change below line of code to plot results using group word stimuli 
 # compiled using different threshold values
-ggsave(file = "american_weat_70.pdf", width = 10, height = 3, dpi = "retina")
-ggsave(file = "american_weat_70.png", width = 10, height = 3, dpi = "retina")
+# ggsave(file = "american_weat_70.pdf", width = 10, height = 3, dpi = "retina")
 # ggsave(file = "american_weat_60.pdf", width = 10, height = 3, dpi = "retina")
-# ggsave(file = "american_weat_60.png", width = 10, height = 3, dpi = "retina")
-# ggsave(file = "american_weat_7020.pdf", width = 10, height = 3, dpi = "retina")
-# ggsave(file = "american_weat_7020.png", width = 10, height = 3, dpi = "retina")
+ggsave(file = "american_weat_7020.pdf", width = 10, height = 3, dpi = "retina")
 
 
