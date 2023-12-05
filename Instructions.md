@@ -47,28 +47,33 @@ Any difficulties reproducing the analysis, please contact the corresponding auth
 
 * Supplement. Domain Analysis
    * Four folders each containing domain-specific attribute word stimuli as .csv files, results of WEATs as .csv files, and code used to perform WEATs (**intellectual_mental**, **legal_status**, **moral**, **social_cultural**)
-   
-- Supplement. Meta Analysis
-   - ALC embeddings of group words for each text category and COCA embeddings of attribute words (**alc_embeddings.RData**)
-   - Code used to perform meta analysis of WEAT *D* scores (**alc_meta_analysis.R**)
-   - Code used to perform meta regressions of WEAT *D* scores (**alc_meta_regression.R**)
-   - Code used to perform WEATs within individual text categories (**alc_meta_weat.R**)
-   - Code used to plot meta-analysis results (**meta_plot.R**)
-   - Folder containing the plots of meta-analysis results (**Plots**)
-   - Code used to append ALC embeddings of group words and the COCA embeddings of attribute words as lists (**prep_alc_embeddings.R**)
-   - Folder containing results of WEATs within individual text categories and the meta-analytic esitmates (**Results**)
 
-* Supplement. RIPA
-   * Code used to plot RIPA results (**plot_ripa.R**)
-   * Folder containing the plot of RIPA effect sizes (**Plots**)
-   * Folder containing RIPA effect sizes (**Results**)
-   * Code used to compare RIPA scores (**ripa.py**)
-
-- WEAT
-   - Code used to plot WEAT results (**plot_weat.R**)
-   - Folder containing the plot of WEAT *D*s (**Plots**)
+- Supplement. Alternative Foreignness Word Stimuli
+   - Folder containing Americanness word stimuli and alternative foreignness word stimuli as .csv files (**Attribute Word Stimuli**)
+   - Code used to perform WEATs using alternative foreignness word stimuli (**foreignness_weat.py**)
    - Folder containing the results of WEATs (**Results**)
-   - Code used to perform WEATs (**weat.py**)
+   
+* Supplement. Meta Analysis
+   * ALC embeddings of group words for each text category and COCA embeddings of attribute words (**alc_embeddings.RData**)
+   * Code used to perform meta analysis of WEAT *D* scores (**alc_meta_analysis.R**)
+   * Code used to perform meta regressions of WEAT *D* scores (**alc_meta_regression.R**)
+   * Code used to perform WEATs within individual text categories (**alc_meta_weat.R**)
+   * Code used to plot meta-analysis results (**meta_plot.R**)
+   * Folder containing the plots of meta-analysis results (**Plots**)
+   * Code used to append ALC embeddings of group words and the COCA embeddings of attribute words as lists (**prep_alc_embeddings.R**)
+   * Folder containing results of WEATs within individual text categories and the meta-analytic esitmates (**Results**)
+
+- Supplement. RIPA
+   - Code used to plot RIPA results (**plot_ripa.R**)
+   - Folder containing the plot of RIPA effect sizes (**Plots**)
+   - Folder containing RIPA effect sizes (**Results**)
+   - Code used to compare RIPA scores (**ripa.py**)
+
+* WEAT
+   * Code used to plot WEAT results (**plot_weat.R**)
+   * Folder containing the plot of WEAT *D*s (**Plots**)
+   * Folder containing the results of WEATs (**Results**)
+   * Code used to perform WEATs (**weat.py**)
 
 ## Data Availability Statement
 
@@ -329,26 +334,38 @@ This GitHub repository does not include the following files:
 * Confirm that *black\_names.csv*, *asian\_names.csv*, *hispanic\_names.csv*, and *white\_names.csv* are inside the "Names70" subfolder of the "Group Word Stimuli” folder and that *intellectual\_mental\_superior.csv*, *intellectual\_mental\_inferior.csv* are inside the “intellectual_mental" subfolder of the “Supplement. Domain Analysis" folder and that *coca.model* is inside the "Embedding Model” folder. 
 * Execute “intellectual\_mental\_weat.py” inside the “intellectual_mental” subfolder.  
    - Run “python3 intellectual\_mental\_weat.py” in Terminal or the Command Line. 
-   - This code computes the WEAT *D* scores and their 95% confidence intervals for all group comparisons and saves them as *intellectual\_mental\_weat\_results.csv* in the “intellectual\_mental” subfolder of the “Supplement. Domain Analysis” folder.
+   - This code computes the WEAT *D* scores and their 95% confidence intervals for all group comparisons in the superiority/inferiority dimension and saves them as *intellectual\_mental\_weat\_results.csv* in the “intellectual\_mental” subfolder of the “Supplement. Domain Analysis” folder.
 
 
 #### WEATs defining superiority as moral superiority 
 * Confirm that *black\_names.csv*, *asian\_names.csv*, *hispanic\_names.csv*, and *white\_names.csv* are inside the "Names70" subfolder of the "Group Word Stimuli” folder and that *moral\_superior.csv*, *moral\_inferior.csv* are inside the “moral" subfolder of the “Supplement. Domain Analysis" folder and that *coca.model* is inside the "Embedding Model” folder. 
 * Execute "moral\_weat.py” inside the “moral” subfolder.  
    - Run “python3 moral\_weat.py” in Terminal or the Command Line. 
-   - This code computes the WEAT *D* scores and their 95% confidence intervals for all group comparisons and saves them as *moral\_weat\_results.csv* in the “moral” subfolder of the “Supplement. Domain Analysis” folder.
+   - This code computes the WEAT *D* scores and their 95% confidence intervals for all group comparisons in the superiority/inferiority dimension and saves them as *moral\_weat\_results.csv* in the “moral” subfolder of the “Supplement. Domain Analysis” folder.
 
 
 #### WEATs defining superiority as social/cultural superiority 
 * Confirm that *black\_names.csv*, *asian\_names.csv*, *hispanic\_names.csv*, and *white\_names.csv* are inside the "Names70" subfolder of the "Group Word Stimuli” folder and that *social\_cultural\_superior.csv*, *social\_cultural\_inferior.csv* are inside the “social_cultural" subfolder of the “Supplement. Domain Analysis" folder and that *coca.model* is inside the "Embedding Model” folder. 
 * Execute "social\_cultural\_weat.py” inside the “social_cultural” subfolder.  
    - Run “python3 social\_cultural\_weat.py” in Terminal or the Command Line. 
-   - This code computes the WEAT *D* scores and their 95% confidence intervals for all group comparisons and saves them as *social\_cultural\_weat\_results.csv* in the "social\_cultural” subfolder of the “Supplement. Domain Analysis” folder.
+   - This code computes the WEAT *D* scores and their 95% confidence intervals for all group comparisons in the superiority/inferiority dimension and saves them as *social\_cultural\_weat\_results.csv* in the "social\_cultural” subfolder of the “Supplement. Domain Analysis” folder.
 
 
 #### WEATs defining Americanness as legal status 
 * Confirm that *black\_names.csv*, *asian\_names.csv*, *hispanic\_names.csv*, and *white\_names.csv* are inside the "Names70" subfolder of the "Group Word Stimuli” folder and that *legal\_status\_american.csv*, *legal\_status\_foreign.csv* are inside the "legal_status" subfolder of the “Supplement. Domain Analysis" folder and that *coca.model* is inside the "Embedding Model” folder. 
 * Execute "legal\_status\_weat.py” inside the “legal_status” subfolder.  
    - Run “python3 legal\_status\_weat.py” in Terminal or the Command Line. 
-   - This code computes the WEAT *D* scores and their 95% confidence intervals for all group comparisons and saves them as *legal\_status\_weat\_results.csv* in the "legal\_status” subfolder of the “Supplement. Domain Analysis” folder.
+   - This code computes the WEAT *D* scores and their 95% confidence intervals for all group comparisons in the Americanness/foreignness dimension and saves them as *legal\_status\_weat\_results.csv* in the "legal\_status” subfolder of the “Supplement. Domain Analysis” folder.
+
+
+### **Alternative Foreignness Word Stimuli (Supplement. Foreignness Word Stimuli Folder)** 
+
+#### Perform WEATs using alternative foreignness word stimuli
+
+* Confirm that *black\_names.csv*, *asian\_names.csv*, *hispanic\_names.csv*, and *white\_names.csv* are inside the "Names70" subfolder of the "Group Word Stimuli” folder and that *american.csv*, *foreign.csv* are inside the "Attribute Word Stimuli" subfolder of the “Supplement. Foreignness Word Stimuli" folder and that *coca.model* is inside the "Embedding Model” folder. 
+* Execute "foreignness_weat.py” inside the “Supplement. Foreignness Word Stimuli" folder.  
+   - Run “python3 foreignness_weat.py” in Terminal or the Command Line. 
+   - This code computes the WEAT *D* scores and their 95% confidence intervals for all group comparisons in the Americanness/foreignness dimension and saves them as *weat\_results\_70.csv* in the "Results” subfolder of the “Supplement. Foreignness Word Stimuli” folder.
+
+
 
