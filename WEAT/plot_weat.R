@@ -53,11 +53,11 @@ superior_plot <- ggplot(superior_table, aes(x = effect, y = groups, xmin = lower
   geom_point(size = 2) +
   geom_errorbarh(height = .2) + 
   theme_bw() + 
-  theme(plot.title = element_text(size = 16, hjust = 0.5),
+  theme(plot.title = element_text(size = 15, hjust = 0.5),
         axis.title.x = element_blank(),
-        axis.text.x = element_text(size = 16),
+        axis.text.x = element_text(size = 15),
         axis.title.y = element_blank(),
-        axis.text.y = element_text(size = 16, margin = margin(r = 5)))
+        axis.text.y = element_text(size = 15, margin = margin(l = 10, r = 5)))
 
 american_plot <- ggplot(american_table, aes(x = effect, y = groups, xmin = lower, xmax = upper)) +
   geom_vline(xintercept = 0, linetype = "longdash") + 
@@ -67,15 +67,16 @@ american_plot <- ggplot(american_table, aes(x = effect, y = groups, xmin = lower
   geom_point(size = 2) +
   geom_errorbarh(height = .2) + 
   theme_bw() + 
-  theme(plot.title = element_text(size = 16, hjust = 0.5),
+  theme(plot.title = element_text(size = 15, hjust = 0.5),
         axis.title.x = element_blank(),
-        axis.text.x = element_text(size = 16),
+        axis.text.x = element_text(size = 15),
         axis.title.y = element_blank(),
-        axis.text.y = element_text(size = 16, margin = margin(r = 5)))
+        axis.text.y = element_text(size = 15, margin = margin(l = 10, r = 5)))
 
 # Place them on a single grid and label them -----------------------------------
 
-ggarrange(superior_plot, american_plot, nrow = 2, labels = c("A", "B"))
+ggarrange(superior_plot, american_plot, nrow = 2, labels = c("A", "B"), 
+          font.label = list(size = 16))
 
 # Change below line of code to plot results using group word stimuli 
 # compiled using different threshold values
