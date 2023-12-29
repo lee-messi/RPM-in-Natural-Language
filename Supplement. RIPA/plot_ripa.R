@@ -2,45 +2,46 @@
 ## Lee, Montgomery, Lai
 # America's Racial Framework of Superiority and Americanness Embedded in Natural Language
 
-## Script date: 28 Aug 2023
+## Script date: 28 Dec 2023
 
 # Install and load packages ----------------------------------------------------
 
 if(!require("tidyverse")){install.packages("tidyverse", dependencies = TRUE); require("tidyverse")}
 if(!require("ggplot2")){install.packages("ggplot2", dependencies = TRUE); require("ggplot2")}
+if(!require("ggpubr")){install.packages("ggpubr", dependencies = TRUE); require("ggpubr")}
 
 # Import the Dataset -----------------------------------------------------------
 
 # Import RIPA results
 setwd("Results")
+weat_table = read.csv('RIPA_70.csv')
 
-ripa.table = read.csv('RIPA_70.csv')
-
-# Filter RIPA results in the superiority dimension
-superior.table <- ripa.table %>% 
+# Filter WEAT results in the superiority dimension
+superior_table <- weat_table %>% 
   filter(dimensions == "Superiority") %>%
   mutate(groups = factor(groups, levels = c("Black v. Hispanic people",
-                                            "Asian v. Hispanic people", 
-                                            "Asian v. Black people", 
+                                            "Asian v. Hispanic people",
+                                            "Asian v. Black people",
                                             "White v. Hispanic people",
                                             "White v. Asian people",
                                             "White v. Black people")))
 
-# Filter RIPA results in the Americanness dimension
-american.table <- ripa.table %>% 
+# Filter WEAT results in the Americanness dimension
+american_table <- weat_table %>% 
   filter(dimensions == "Americanness") %>%
   mutate(groups = factor(groups, levels = c("Asian v. Hispanic people",
-                                            "Black v. Hispanic people", 
-                                            "Black v. Asian people", 
+                                            "Black v. Hispanic people",
+                                            "Black v. Asian people",
                                             "White v. Hispanic people",
                                             "White v. Asian people",
                                             "White v. Black people")))
 
-# Superiority Forest Plot ------------------------------------------------------
+# Generate forest plots for each dimension -------------------------------------
 
+# Change working directory to Plots
 setwd("../Plots")
 
-ggplot(superior.table, aes(x = effect, y = groups, xmin = lower, xmax = upper)) +
+superior_plot <- ggplot(superior_table, aes(x = effect, y = groups, xmin = lower, xmax = upper)) +
   geom_vline(xintercept = 0, linetype = "longdash") + 
   scale_x_continuous(limits = c(-0.2, 0.6),
                      breaks = c(-0.2, 0.0, 0.2, 0.4, 0.6),
@@ -52,13 +53,9 @@ ggplot(superior.table, aes(x = effect, y = groups, xmin = lower, xmax = upper)) 
         axis.title.x = element_blank(),
         axis.text.x = element_text(size = rel(1.8)),
         axis.title.y = element_blank(),
-        axis.text.y = element_text(size = rel(1.8), margin = margin(r = 5)))
+        axis.text.y = element_text(size = 15, margin = margin(l = 10, r = 5)))
 
-ggsave(file = "superior_ripa_70.pdf", width = 10, height = 3, dpi = "retina")
-
-# Americanness Forest Plot -----------------------------------------------------
-
-ggplot(american.table, aes(x = effect, y = groups, xmin = lower, xmax = upper)) +
+american_plot <- ggplot(american_table, aes(x = effect, y = groups, xmin = lower, xmax = upper)) +
   geom_vline(xintercept = 0, linetype = "longdash") + 
   scale_x_continuous(limits = c(-0.2, 0.6),
                      breaks = c(-0.2, 0.0, 0.2, 0.4, 0.6),
@@ -70,7 +67,12 @@ ggplot(american.table, aes(x = effect, y = groups, xmin = lower, xmax = upper)) 
         axis.title.x = element_blank(),
         axis.text.x = element_text(size = rel(1.8)),
         axis.title.y = element_blank(),
-        axis.text.y = element_text(size = rel(1.8), margin = margin(r = 5)))
+        axis.text.y = element_text(size = 15, margin = margin(l = 10, r = 5)))
 
-ggsave(file = "american_ripa_70.pdf", width = 10, height = 3, dpi = "retina")
+# Place them on a single grid and label them -----------------------------------
+
+ggarrange(superior_plot, american_plot, nrow = 2, labels = c("A", "B"), 
+          font.label = list(size = 16))
+
+ggsave(file = "ripa_70.pdf", width = 10, height = 6, dpi = "retina")
 
