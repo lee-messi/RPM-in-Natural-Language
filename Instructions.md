@@ -100,6 +100,8 @@ This GitHub repository does not include the following files:
 
 - R Packages (R version used: 4.2.2). If R is not installed, download [a version of R](https://cran.r-project.org/).
    - tidyverse: https://cran.r-project.org/web/packages/tidyverse/index.html
+   - ggplot2: https://cran.r-project.org/web/packages/ggplot2/index.html
+   - ggpubr: https://cran.r-project.org/web/packages/ggpubr/index.html
    - ggsci: https://cran.r-project.org/web/packages/ggsci/index.html
    - reticulate: https://cran.r-project.org/web/packages/reticulate/index.html
    - conText: https://cran.r-project.org/web/packages/conText/index.html
@@ -194,7 +196,7 @@ This GitHub repository does not include the following files:
 
 ### **Word Embedding Association Tests (WEAT Folder)**
 #### Perform Word Embedding Association Tests
-* Confirm that *black\_names.csv*, *asian\_names.csv*, *hispanic\_names.csv*, and *white\_names.csv* are inside the “Names70", "Names60", and "Names7020" subfolders of the “Group Word Stimuli" folder and that *coca.model*, *coca.model.syn1neg.npy*, and *coca.model.wv.vectors.npy* are inside the "Embedding Model” folder. 
+* Confirm that *black\_names.csv*, *asian\_names.csv*, *hispanic\_names.csv*, and *white\_names.csv* are inside the “Names70", "Names60", and "Names7020" subfolders of the “Group Word Stimuli" folder, that *superior.csv*, *inferior.csv*, *american.csv*, and *foreign.csv* are inside the “Word Stimuli" subfolder of the “Attribute Word Stimuli" folder, and that *coca.model*, *coca.model.syn1neg.npy*, and *coca.model.wv.vectors.npy* are inside the "Embedding Model” folder. 
 * Execute “weat.py” inside the "WEAT” folder. 
    - Create a “Results” subfolder inside the “WEAT" folder. 
    - Run “python3 weat.py” in Terminal or the Command Line. 
@@ -206,7 +208,7 @@ This GitHub repository does not include the following files:
 * Execute “plot\_weat.R” inside the "WEAT” folder. 
    - Create a “Plots" subfolder inside the “WEAT" folder. 
    - Run “Rscript plot\_weat.R” in Terminal or the Command Line. 
-   - This code visualizes superiority and Americanness WEAT *D* scores and their 95% confidence intervals as two separate forest plots and saves them in the “Plots" subfolder of the “WEAT" folder. Modify lines 18 - 20, lines 63 - 68, and lines 88 - 93 so that the lines correspond to the threshold value used to compile the group word stimuli.
+   - This code visualizes superiority and Americanness WEAT *D* scores and their 95% confidence intervals as a single plot and saves it in the “Plots" subfolder of the “WEAT" folder. Modify lines 19 - 21 and lines 83 - 85 so that they correspond to the threshold value used to compile the group word stimuli.
 
 
 ### **Single-Category Word Embedding Association Tests (SC-WEAT Folder)**
@@ -368,4 +370,20 @@ This GitHub repository does not include the following files:
    - This code computes the WEAT *D* scores and their 95% confidence intervals for all group comparisons in the Americanness/foreignness dimension and saves them as *weat\_results\_70.csv* in the "Results” subfolder of the “Supplement. Foreignness Word Stimuli” folder.
 
 
+### **RIPA (Supplement. RIPA Folder)**
+
+#### Compute RIPA scores
+* Confirm that *black\_names.csv*, *asian\_names.csv*, *hispanic\_names.csv*, and *white\_names.csv* are inside the “Names70" subfolder of the “Group Word Stimuli" folder, that *superior.csv*, *inferior.csv*, *american.csv*, and *foreign.csv* are inside the “Word Stimuli" subfolder of the “Attribute Word Stimuli" folder, and that *coca.model*, *coca.model.syn1neg.npy*, and *coca.model.wv.vectors.npy* are inside the "Embedding Model” folder. 
+* Execute “ripa.py” inside the "Supplement. RIPA” folder. 
+   - Create a “Results” subfolder inside the “Supplement. RIPA" folder. 
+   - Run “python3 ripa.py” in Terminal or the Command Line. 
+   - This code computes the RIPA *d*s and their 95% confidence intervals for all group comparisons and saves them as a .csv file in the “Results” subfolder of the "Supplement. RIPA” folder. 
+
+
+#### Visualize RIPA scores
+* Confirm that *ripa\_70.csv* is inside the “Results” subfolder of the "Supplement. RIPA" folder. 
+* Execute “plot\_ripa.R” inside the "Supplement. RIPA” folder. 
+   - Create a “Plots" subfolder inside the “Supplement. RIPA" folder. 
+   - Run “Rscript plot\_ripa.R” in Terminal or the Command Line. 
+   - This code visualizes superiority and Americanness RIPA *d*s and their 95% confidence intervals as a single plot and saves it in the “Plots" subfolder of the “Supplement. RIPA" folder. 
 
