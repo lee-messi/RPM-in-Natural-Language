@@ -2,7 +2,7 @@
 ## Anonymous
 # America's Racial Framework of Superiority and Americanness Embedded in Natural Language
 
-## Script date: 25 Aug 2023
+## Script date: 9 Jan 2024
 
 #Install and load packages -----------------------------------------------------
 
@@ -14,7 +14,7 @@ pd <- import("pandas")
 # Import Cleaned Corpus for Tokenization ---------------------------------------
 
 # Navigate the corpus folder where 'cleaned_coca.pkl' is
-setwd("../../")
+setwd("../")
 parent <- getwd()
 setwd(paste0(parent, "/Corpus"))
 
@@ -37,6 +37,6 @@ mode(coca_embed) <- "numeric"
 # Save All Objects -------------------------------------------------------------
 
 # Navigate the meta_analysis folder
-setwd(paste0(parent, "/Supplement. WEAT/Meta Analysis"))
+setwd(paste0(parent, "/Meta Analysis"))
 rm(pd, parent)
 save.image('meta.RData')
